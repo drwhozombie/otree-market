@@ -6,6 +6,10 @@ SESSION_CONFIGS = [
         display_name='Double Auction Market',
         app_sequence=['singleAsset'],
         num_demo_participants=6,
+        randomise_types=False,
+        short_selling=True,
+        margin_trading=True,
+        market_time=300,
     ),
 ]
 
