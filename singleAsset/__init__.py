@@ -16,6 +16,11 @@ class C(BaseConstants):
     min_payment = cu(4)
     FV_MIN = 30
     FV_MAX = 85
+    QUESTIONS = [
+        {'question': 'Trial round: What is 10 + 10?', 'answer': 20},
+        {'question': 'Round 1: What is the height of the Eiffel Tower in metres?', 'answer': 330},
+        {'question': 'Round 2: In what year was Google founded?', 'answer': 1998},
+    ]
     num_assets_MIN = 20
     num_assets_MAX = 35
     decimals = 2
@@ -113,11 +118,9 @@ def assign_types(group: Group):
 
 
 def define_asset_value(group: Group):
-    # this code is run at the first WaitToStart page, within the initiate_group() function, when all participants arrived
-    # this function determines the BBV and shares the information to the players table.
-    asset_value = round(random.uniform(a=C.FV_MIN, b=C.FV_MAX), C.decimals)
-    group.assetValue = asset_value
-
+    q = C.QUESTIONS[group.round_number - 1]
+    group.assetValue = float(q['answer'])
+    group.session.vars['current_question'] = q['question']
 
 def count_participants(group: Group):
     # this code is run at the first WaitToStart page, within the initiate_group() function, when all participants arrived

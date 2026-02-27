@@ -16,6 +16,10 @@ Continuous double auction market - pre market information
 </noscript>
 
 <p>Soon, {{ if player.round_number <= C.num_trial_rounds }} trial round nr. {{ player.round_number }} {{ else }} round nr. {{ round }} {{ endif }} starts.</p>
+<div style="background:#f0f4ff; border-left: 4px solid #3366cc; padding: 15px; margin-bottom: 20px; font-size: 1.2em;">
+    <strong>This round's question:</strong><br><br>
+    {{ session.vars.current_question }}
+</div>
 
 <div id="endowmentDiv" class="endowment-container row" style="margin-bottom: 35px">
     <div class="endowment-div col-sm div_box">
