@@ -8,7 +8,7 @@ SESSION_CONFIGS = [
         num_demo_participants=6,
         randomise_types=True,
         short_selling=True,
-        margin_trading=True,
+        margin_buying=True,
         market_time=300,
     ),
 ]
